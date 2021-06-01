@@ -4,6 +4,7 @@
 - Removes all standard AOSP system soundfx (except proxy and visualizer). Makes your audio mod sounds clearer.
 
 ## Screenshots
+- https://t.me/androidryukimods/92
 
 ## Requirements
 - Magisk installed
