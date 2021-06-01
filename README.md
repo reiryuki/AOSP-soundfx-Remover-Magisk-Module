@@ -1,7 +1,7 @@
 # AOSP soundfx Remover Magisk Module
 
 ## Descriptions
-- Removes all standard AOSP system soundfx. Makes your audio mod sounds clearer.
+- Removes all standard AOSP system soundfx (except proxy and visualizer). Makes your audio mod sounds clearer.
 
 ## Screenshots
 
@@ -32,3 +32,4 @@
 - https://www.paypal.me/reiryuki
 
 ## Download
+- https://www.pling.com/p/1531943/
