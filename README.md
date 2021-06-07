@@ -26,7 +26,7 @@
 - Delete /data/adb/modules/AOSPsoundfxRemover folder via recovery if you facing bootloop.
 
 ## Bug Report
-- https://t.me/audioryukimods/2618 ("z" folder is enough, no need logs)
+- https://t.me/androidryukimodsdiscussions/2618 ("z" folder is enough, no need logs)
 
 ## Thanks for Donations
 - https://t.me/androidryukimodsdiscussions/2619
