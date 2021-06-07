@@ -4,7 +4,7 @@
 - Removes all standard AOSP system soundfx (except proxy and visualizer). Makes your audio mod sounds clearer. AOSP soundfx is exist in all ROM and vendor, not only in AOSP based ROM.
 
 ## Screenshots
-- https://t.me/androidryukimods/92
+- https://t.me/androidryukimodsdiscussions/92
 
 ## Requirements
 - Magisk installed
@@ -29,7 +29,7 @@
 - https://t.me/audioryukimods/2618 ("z" folder is enough, no need logs)
 
 ## Thanks for Donations
-- https://t.me/audioryukimods/2619
+- https://t.me/androidryukimodsdiscussions/2619
 - https://www.paypal.me/reiryuki
 
 ## Download
