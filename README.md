@@ -19,7 +19,14 @@
 
   `dumpsys media.audio_flinger`
 
-## Optional
+## Optionals
+- You can keep your MusicFX AOSP or AudioFX LineageOS by run terminal before flashing this module:
+
+  su
+
+  `setprop fx.keep 1`
+
+  Flash this module and reboot after.
 
 ## Troubleshootings
 - Use Audio Modification Library module if using audio mods other than this.
