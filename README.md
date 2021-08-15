@@ -1,7 +1,7 @@
 # AOSP soundfx Remover Magisk Module
 
 ## Descriptions
-- Removes all standard AOSP system soundfx (except proxy, visualizer, and downmix). Makes your audio mod sounds clearer. AOSP soundfx is exist in all ROM and vendor, not only in AOSP based ROM.
+- Removes all or some standard AOSP system soundfx (except proxy, visualizer, downmix, and audio_pre_processing). Makes your audio mod sounds clearer. AOSP soundfx is exist in every ROMs and vendors, not only in AOSP based ROM.
 
 ## Screenshots
 - https://t.me/androidryukimodsdiscussions/92
