@@ -15,29 +15,25 @@
 - Reboot
 - You can check is your AOSP soundfx deactivated via Terminal Emulator:
 
-  su
-
-  `dumpsys media.audio_flinger`
+  `su -c dumpsys media.audio_flinger`
 
 ## Optionals
-- You can keep your MusicFX AOSP or AudioFX LineageOS by run terminal before flashing this module:
+- You can keep your MusicFX AOSP or AudioFX LineageOS by run terminal before installing this module:
 
-  su
+  `su -c setprop fx.keep 1`
 
-  `setprop fx.keep 1`
-
-  Flash this module and reboot after.
+  Reinstall this module and reboot after.
 
 ## Troubleshootings
 - Use Audio Modification Library module if using audio mods other than this.
-- Delete /data/adb/modules/AOSPsoundfxRemover folder via recovery if you facing bootloop.
 
 ## Bug Report
 - https://t.me/androidryukimodsdiscussions/2618 ("z" folder is enough, no need logs)
 
 ## Credits
-- Android Ryuki Mods Discussions Team
-- https://t.me/androidryukimodsdiscussions/25188
+- https://t.me/viperatmos
+- https://t.me/androidryukimodsdiscussions
+- https://t.me/androidappsportdevelopment
 
 ## Thanks for Donations
 - https://t.me/androidryukimodsdiscussions/2619
