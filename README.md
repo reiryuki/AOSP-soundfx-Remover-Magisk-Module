@@ -11,21 +11,20 @@
 
 ## Installation Guide
 - Install the module via Magisk Manager or recovery
-- Install Audio Modification Library Module if using audio mods other than this
+- Install AML module only if using any other audio mod modules
 - Reboot
 - You can check is your AOSP soundfx deactivated via Terminal Emulator:
 
   `su -c dumpsys media.audio_flinger`
 
-## Optionals
+## Optionals & Troubleshootings
+- https://t.me/androidryukimodsdiscussions/29836
+- https://t.me/androidryukimodsdiscussions/60861
 - You can keep your MusicFX AOSP or AudioFX LineageOS by run terminal before installing this module:
 
   `su -c setprop fx.keep 1`
 
   Reinstall this module and reboot after.
-
-## Troubleshootings
-- Use Audio Modification Library module if using audio mods other than this.
 
 ## Bug Report
 - https://t.me/androidryukimodsdiscussions/2618 ("z" folder is enough, no need logs)
