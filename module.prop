@@ -1,0 +1,9 @@
+id=AOSPsoundfxRemover
+name=AOSP soundfx Remover
+version=v2.1
+versionCode=11
+author=Rei Ryuki the Fixer
+description=Removes all standard AOSP system soundfx. Makes your audio mod sounds clearer. Helps audio mods working properly. Deactivates MusicFX AOSP and AudioFX LineageOS.
+
+
+
