@@ -138,7 +138,7 @@ DIR=`find $MODPATH/system/vendor -type d`
 for DIRS in $DIR; do
   chown 0.2000 $DIRS
 done
-if [ "$API" -gt 25 ]; then
+if [ "$API" -ge 26 ]; then
   magiskpolicy --live "type vendor_file"
   magiskpolicy --live "type vendor_configs_file"
   magiskpolicy --live "dontaudit { vendor_file vendor_configs_file } labeledfs filesystem associate"

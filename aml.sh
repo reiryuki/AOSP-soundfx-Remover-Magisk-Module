@@ -1,6 +1,6 @@
 MODPATH=${0%/*}
 
-# destinations
+# destination
 MODAEC=`find $MODPATH/system -type f -name *audio*effects*.conf`
 MODAEX=`find $MODPATH/system -type f -name *audio*effects*.xml`
 
@@ -59,7 +59,8 @@ RMV='libqcompostprocbundle.so libbundlewrapper.so
      f3e178d2-ebcb-408e-8357-0002a5d5c51b
      172cdf00-a3bc-11df-a72f-0002a5d5c51b
      b08a0e38-22a5-11e2-b87b-f23c91aec05e
-     aa2bebf6-47cf-4613-9bca-0002a5d5c51b'
+     aa2bebf6-47cf-4613-9bca-0002a5d5c51b
+     119341a0-8469-11df-81f9-0002a5d5c51b'
      
 # patch audio effects conf
 #kif [ "$MODAEC" ]; then
@@ -71,8 +72,7 @@ RMV='libqcompostprocbundle.so libbundlewrapper.so
 #k  remove_xml
 #kfi
 
-RMV='119341a0-8469-11df-81f9-0002a5d5c51b
-     libldnhncr.so
+RMV='libldnhncr.so
      fa415329-2034-4bea-b5dc-5b381c8d1e2c
      libvolumelistener.so
      ring_helper alarm_helper music_helper
@@ -84,8 +84,9 @@ RMV='119341a0-8469-11df-81f9-0002a5d5c51b
      0b776dde-0590-11e5-81ba-0025b32654a0
      libdynproc.so
      e0e6539b-1781-7261-676f-6d7573696340
-     libasphere.so libshoebox.so
+     libasphere.so
      184e62ab-2d19-4364-9d1b-c0a40733866c
+     libshoebox.so
      1eab784c-1a36-4b2a-b7fc-e34c44cab89e'
 
 # patch audio effects conf
