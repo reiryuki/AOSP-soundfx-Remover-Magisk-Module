@@ -28,7 +28,7 @@ if [ -d $DIR ] && [ ! -f $AML/disable ] && [ "$API" -ge 26 ]; then
 fi
 
 # mount
-NAME="*audio*effects*.conf -o -name *audio*effects*.xml -o -name *policy*.conf -o -name *policy*.xml"
+NAME="*audio*effects*.conf -o -name *audio*effects*.xml"
 if [ ! -d $AML ] || [ -f $AML/disable ]; then
   DIR=$MODPATH/system/vendor
 else
