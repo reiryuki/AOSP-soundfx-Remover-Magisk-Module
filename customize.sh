@@ -35,7 +35,6 @@ mv -f $MODPATH/aml.sh $MODPATH/.aml.sh
 
 # cleaning
 ui_print "- Cleaning..."
-rm -f $MODPATH/LICENSE
 rm -rf /metadata/magisk/$MODID
 rm -rf /mnt/vendor/persist/magisk/$MODID
 rm -rf /persist/magisk/$MODID
