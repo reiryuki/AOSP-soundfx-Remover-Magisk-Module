@@ -23,11 +23,6 @@
 ## Optionals & Troubleshootings
 - https://t.me/androidryukimodsdiscussions/29836
 - https://t.me/androidryukimodsdiscussions/60861
-- You can keep your MusicFX AOSP or AudioFX LineageOS by run terminal before installing this module:
-
-  `su -c setprop fx.keep 1`
-
-  Reinstall this module and reboot after.
 
 ## Bug Report
 - https://t.me/androidryukimodsdiscussions/2618 ("z" folder is enough, no need logs)
