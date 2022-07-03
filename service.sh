@@ -6,18 +6,6 @@ AML=/data/adb/modules/aml
 exec 2>$MODPATH/debug.log
 set -x
 
-# function
-restart_audioserver() {
-if [ "$API" -ge 24 ]; then
-  killall audioserver
-else
-  killall mediaserver
-fi
-}
-
-# restart
-restart_audioserver
-
 # wait
 sleep 20
 
@@ -53,9 +41,12 @@ if [ -d /my_product/etc ] && [ "$FILE" ]; then
     fi
   done
 fi
-if ( [ `realpath /odm/etc` == /odm/etc ] && [ "$FILE" ] )\
-|| ( [ -d /my_product/etc ] && [ "$FILE" ] ); then
-  restart_audioserver
+
+# restart
+if [ "$API" -ge 24 ]; then
+  killall audioserver
+else
+  killall mediaserver
 fi
 
 
