@@ -14,7 +14,7 @@
 
 ## Installation Guide
 - Install the module via Magisk Manager or recovery
-- This is also an audio mod, so, you need to install AML module if using any other audio mod modules
+- This is also an audio mod, so, you need to install AML module if using any other audio mod module.
 - Reboot
 - You can check is your AOSP soundfx deactivated via Terminal Emulator:
 
@@ -40,6 +40,7 @@
 ## Thanks for Donations
 - https://t.me/androidryukimodsdiscussions/2619
 - https://www.paypal.me/reiryuki
+- https://ko-fi.com/reiryuki
 
 ## Download
 - https://www.pling.com/p/1531943/
