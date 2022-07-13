@@ -1,7 +1,7 @@
 # AOSP soundfx Remover Magisk Module
 
 ## Descriptions
-- Removes all or some standard AOSP system soundfx (except proxy, visualizer, downmix, and audio_pre_processing).
+- Removes all or some standard AOSP system soundfx (except proxy, visualizer, downmix, dynamic_processing, and audio_pre_processing).
   Makes your audio mod sounds clearer.
   Removes MusicFX AOSP and AudioFX LineageOS also can't use most of EQ from Play Store.
   AOSP soundfx is exist in every ROMs and vendors, not only in AOSP based ROM.
