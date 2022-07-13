@@ -107,14 +107,14 @@ RMV='libldnhncr.so
      09f303e2-0590-11e5-8fdb-0025b32654a0
      0ace5c08-0590-11e5-ae9e-0025b32654a0
      0b776dde-0590-11e5-81ba-0025b32654a0
-     libdynproc.so
-     e0e6539b-1781-7261-676f-6d7573696340
      libasphere.so
      184e62ab-2d19-4364-9d1b-c0a40733866c
      libshoebox.so
      1eab784c-1a36-4b2a-b7fc-e34c44cab89e
      libspatialaudio.so
      cc4677de-ff72-11eb-9a03-0242ac130003'
+     #libdynproc.so
+     #e0e6539b-1781-7261-676f-6d7573696340
 
 # patch audio effects conf
 if [ "$MODAEC" ]; then
