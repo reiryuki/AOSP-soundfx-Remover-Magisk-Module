@@ -30,12 +30,15 @@
 
 ## Support & Bug Report
 - https://t.me/androidryukimodsdiscussions/2618 (Z folder is enough, no need logs)
+- If you don't do above, issues will be closed immediately
 
 ## Tested on
 - Android 10 CrDroid ROM
 - Android 11 DotOS ROM
 - Android 12 AncientOS ROM
 - Android 12.1 Nusantara ROM
+- Android 13 Nusantara ROM
+- Android 13 AOSP ROM
 
 ## Credits and contributors
 - https://t.me/viperatmos

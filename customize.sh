@@ -1,11 +1,27 @@
-ui_print " "
+# space
+if [ "$BOOTMODE" == true ]; then
+  ui_print " "
+fi
 
 # magisk
 if [ -d /sbin/.magisk ]; then
   MAGISKTMP=/sbin/.magisk
 else
-  MAGISKTMP=`find /dev -mindepth 2 -maxdepth 2 -type d -name .magisk`
+  MAGISKTMP=`realpath /dev/*/.magisk`
 fi
+
+# path
+if [ "$BOOTMODE" == true ]; then
+  MIRROR=$MAGISKTMP/mirror
+else
+  MIRROR=
+fi
+SYSTEM=`realpath $MIRROR/system`
+PRODUCT=`realpath $MIRROR/product`
+VENDOR=`realpath $MIRROR/vendor`
+SYSTEM_EXT=`realpath $MIRROR/system/system_ext`
+ODM=`realpath /odm`
+MY_PRODUCT=`realpath /my_product`
 
 # optionals
 OPTIONALS=/sdcard/optionals.prop
@@ -20,11 +36,15 @@ ui_print " MagiskVersion=$MAGISK_VER"
 ui_print " MagiskVersionCode=$MAGISK_VER_CODE"
 ui_print " "
 
-# sepolicy.rule
+# mount
 if [ "$BOOTMODE" != true ]; then
+  mount -o rw -t auto /dev/block/bootdevice/by-name/cust /vendor
+  mount -o rw -t auto /dev/block/bootdevice/by-name/vendor /vendor
   mount -o rw -t auto /dev/block/bootdevice/by-name/persist /persist
   mount -o rw -t auto /dev/block/bootdevice/by-name/metadata /metadata
 fi
+
+# sepolicy.rule
 FILE=$MODPATH/sepolicy.sh
 DES=$MODPATH/sepolicy.rule
 if [ -f $FILE ] && [ "`grep_prop sepolicy.sh $OPTIONALS`" != 1 ]; then
@@ -53,67 +73,37 @@ if [ -d $DIR ]; then
 fi
 }
 hide_app() {
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/system/app/$APPS
-else
-  DIR=/system/app/$APPS
-fi
+DIR=$SYSTEM/app/$APPS
 MODDIR=$MODPATH/system/app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/system/priv-app/$APPS
-else
-  DIR=/system/priv-app/$APPS
-fi
+DIR=$SYSTEM/priv-app/$APPS
 MODDIR=$MODPATH/system/priv-app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/product/app/$APPS
-else
-  DIR=/product/app/$APPS
-fi
+DIR=$PRODUCT/app/$APPS
 MODDIR=$MODPATH/system/product/app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/product/priv-app/$APPS
-else
-  DIR=/product/priv-app/$APPS
-fi
+DIR=$PRODUCT/priv-app/$APPS
 MODDIR=$MODPATH/system/product/priv-app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/product/preinstall/$APPS
-else
-  DIR=/product/preinstall/$APPS
-fi
+DIR=$MY_PRODUCT/app/$APPS
+MODDIR=$MODPATH/system/product/app/$APPS
+replace_dir
+DIR=$MY_PRODUCT/priv-app/$APPS
+MODDIR=$MODPATH/system/product/priv-app/$APPS
+replace_dir
+DIR=$PRODUCT/preinstall/$APPS
 MODDIR=$MODPATH/system/product/preinstall/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/system_ext/app/$APPS
-else
-  DIR=/system/system_ext/app/$APPS
-fi
+DIR=$SYSTEM_EXT/app/$APPS
 MODDIR=$MODPATH/system/system_ext/app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/system_ext/priv-app/$APPS
-else
-  DIR=/system/system_ext/priv-app/$APPS
-fi
+DIR=$SYSTEM_EXT/priv-app/$APPS
 MODDIR=$MODPATH/system/system_ext/priv-app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/vendor/app/$APPS
-else
-  DIR=/vendor/app/$APPS
-fi
+DIR=$VENDOR/app/$APPS
 MODDIR=$MODPATH/system/vendor/app/$APPS
 replace_dir
-if [ "$BOOTMODE" == true ]; then
-  DIR=$MAGISKTMP/mirror/vendor/euclid/product/app/$APPS
-else
-  DIR=/vendor/euclid/product/app/$APPS
-fi
+DIR=$VENDOR/euclid/product/app/$APPS
 MODDIR=$MODPATH/system/vendor/euclid/product/app/$APPS
 replace_dir
 }
@@ -135,12 +125,14 @@ else
 fi
 
 # permission
-ui_print "- Setting permission..."
-DIR=`find $MODPATH/system/vendor -type d`
-for DIRS in $DIR; do
-  chown 0.2000 $DIRS
-done
-ui_print " "
+if [ "$API" -ge 26 ]; then
+  ui_print "- Setting permission..."
+  DIR=`find $MODPATH/system/vendor -type d`
+  for DIRS in $DIR; do
+    chown 0.2000 $DIRS
+  done
+  ui_print " "
+fi
 
 
 

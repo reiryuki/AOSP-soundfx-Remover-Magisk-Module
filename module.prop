@@ -1,7 +1,7 @@
 id=AOSPsoundfxRemover
 name=AOSP soundfx Remover
-version=v2.5
-versionCode=15
+version=v2.6
+versionCode=16
 author=Rei Ryuki the Fixer
 description=Removes all standard AOSP system soundfx (except proxy, visualizer, downmix, dynamics_processing, and audio_pre_processing). Makes your audio mod sounds clearer. Helps audio mods working properly. Removes MusicFX AOSP and AudioFX LineageOS also can't use most of EQ from Play Store.
 
