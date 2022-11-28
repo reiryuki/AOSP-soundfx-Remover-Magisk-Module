@@ -15,7 +15,7 @@
 
 ## Installation Guide & Download Link
 - Install this module https://www.pling.com/p/1531943/ via Magisk Manager or Recovery
-- This is also an audio mod so, you need to install AML Magisk Module https://zackptg5.com/android.php#aml if using any other audio mod module
+- This is also an audio mod so, you need to install AML Magisk Module https://t.me/androidryukimodsdiscussions/29836 if using any other audio mod module
 - Reboot
 - You can check is your AOSP soundfx deactivated or not via Terminal Emulator:
 

@@ -11,7 +11,7 @@ set -x
 # run
 FILE=$MODPATH/sepolicy.sh
 if [ -f $FILE ]; then
-  sh $FILE
+  . $FILE
 fi
 
 # context
@@ -19,6 +19,7 @@ if [ "$API" -ge 26 ]; then
   chcon -R u:object_r:vendor_file:s0 $MODPATH/system/vendor
   chcon -R u:object_r:vendor_configs_file:s0 $MODPATH/system/vendor/etc
   chcon -R u:object_r:vendor_configs_file:s0 $MODPATH/system/vendor/odm/etc
+  chcon -R u:object_r:vendor_configs_file:s0 $MODPATH/system/odm/etc
 fi
 
 # magisk
@@ -32,12 +33,18 @@ fi
 MIRROR=$MAGISKTMP/mirror
 SYSTEM=`realpath $MIRROR/system`
 VENDOR=`realpath $MIRROR/vendor`
+ODM=`realpath $MIRROR/odm`
+MY_PRODUCT=`realpath $MIRROR/my_product`
 ETC=$SYSTEM/etc
 VETC=$VENDOR/etc
 VOETC=$VENDOR/odm/etc
+OETC=$ODM/etc
+MPETC=$MY_PRODUCT/etc
 MODETC=$MODPATH/system/etc
 MODVETC=$MODPATH/system/vendor/etc
 MODVOETC=$MODPATH/system/vendor/odm/etc
+MODOETC=$MODPATH/system/odm/etc
+MODMPETC=$MODPATH/system/my_product/etc
 
 # conflicts
 if [ -d $AML ] && [ ! -f $AML/disable ]\
@@ -61,10 +68,12 @@ fi
 NAME="*audio*effects*.conf -o -name *audio*effects*.xml"
 rm -f `find $MODPATH/system -type f -name $NAME`
 A=`find $ETC -maxdepth 1 -type f -name $NAME`
-VA=`find $VETC /odm/etc /my_product/etc -maxdepth 1 -type f -name $NAME`
+VA=`find $VETC -maxdepth 1 -type f -name $NAME`
 VOA=`find $VOETC -maxdepth 1 -type f -name $NAME`
 VAA=`find $VETC/audio -maxdepth 1 -type f -name $NAME`
 VBA=`find $VETC/audio/"$PROP" -maxdepth 1 -type f -name $NAME`
+OA=`find $OETC -maxdepth 1 -type f -name $NAME`
+MPA=`find $MPETC -maxdepth 1 -type f -name $NAME`
 if [ "$A" ]; then
   cp -f $A $MODETC
 fi
@@ -88,9 +97,28 @@ if [ "$SKU" ]; then
     fi
   done
 fi
+if [ "$OA" ]; then
+  cp -f $OA $MODOETC
+fi
+if [ "$MPA" ]; then
+  cp -f $MPA $MODMPETC
+fi
+if [ ! -d $ODM ]\
+&& [ "`realpath /odm/etc`" == /odm/etc ]; then
+  OA=`find /odm/etc -maxdepth 1 -type f -name $NAME`
+  if [ "$OA" ]; then
+    cp -f $OA $MODVETC
+  fi
+fi
+if [ ! -d $MY_PRODUCT ] && [ -d /my_product/etc ]; then
+  MPA=`find /my_product/etc -maxdepth 1 -type f -name $NAME`
+  if [ "$MPA" ]; then
+    cp -f $MPA $MODVETC
+  fi
+fi
 rm -f `find $MODPATH/system -type f -name *audio*effects*spatializer*.xml`
 
 # run
-sh $MODPATH/.aml.sh
+. $MODPATH/.aml.sh
 
 
