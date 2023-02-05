@@ -87,19 +87,8 @@ RMV='libqcompostprocbundle.so
      a8c1e5f3-293d-43cd-95ec-d5e26c02e217
      791fff8b-8129-4655-83a4-59bc61034c3a
      53ef1db5-c0c0-445b-b060-e34d20ebb70a
-     b08a0e38-22a5-11e2-b87b-f23c91aec05e'
-     
-# patch audio effects conf
-#kif [ "$MODAEC" ]; then
-#k  remove_conf
-#kfi
-
-# patch audio effects xml
-#kif [ "$MODAEX" ]; then
-#k  remove_xml
-#kfi
-
-RMV='libldnhncr.so
+     b08a0e38-22a5-11e2-b87b-f23c91aec05e
+     libldnhncr.so
      fa415329-2034-4bea-b5dc-5b381c8d1e2c
      libvolumelistener.so
      ring_helper alarm_helper music_helper

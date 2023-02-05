@@ -33,6 +33,9 @@ fi
 
 # optionals
 OPTIONALS=/sdcard/optionals.prop
+if [ ! -f $OPTIONALS ]; then
+  touch $OPTIONALS
+fi
 
 # info
 MODVER=`grep_prop version $MODPATH/module.prop`
@@ -52,13 +55,12 @@ if [ "$BOOTMODE" != true ]; then
   mount -o rw -t auto /dev/block/bootdevice/by-name/metadata /metadata
 fi
 
-# sepolicy.rule
-FILE=$MODPATH/sepolicy.sh
-DES=$MODPATH/sepolicy.rule
-if [ -f $FILE ] && [ "`grep_prop sepolicy.sh $OPTIONALS`" != 1 ]; then
+# sepolicy
+FILE=$MODPATH/sepolicy.rule
+DES=$MODPATH/sepolicy.pfsd
+if [ "`grep_prop sepolicy.sh $OPTIONALS`" == 1 ]\
+&& [ -f $FILE ]; then
   mv -f $FILE $DES
-  sed -i 's/magiskpolicy --live "//g' $DES
-  sed -i 's/"//g' $DES
 fi
 
 # .aml.sh
@@ -116,21 +118,11 @@ MODDIR=$MODPATH/system/vendor/euclid/product/app/$APPS
 replace_dir
 }
 
-# keep
-if [ "`grep_prop fx.keep $OPTIONALS`" == 1 ]; then
-  ui_print "- MusicFX AOSP or AudioFX LineageOS will be keep enabled"
-  sed -i 's/Removes all standard/Removes some standard/g' $MODPATH/module.prop
-  sed -i 's/ Deactivates MusicFX AOSP and AudioFX LineageOS.//g' $MODPATH/module.prop
-  ui_print " "
-else
-  ui_print "- MusicFX AOSP and AudioFX LineageOS will be disabled"
-  ui_print " "
-  sed -i 's/#k//g' $MODPATH/.aml.sh
-  APP="AudioFX MusicFX"
-  for APPS in $APP; do
-    hide_app
-  done
-fi
+# hide
+APP="AudioFX MusicFX"
+for APPS in $APP; do
+  hide_app
+done
 
 # permission
 if [ "$API" -ge 26 ]; then

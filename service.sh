@@ -6,6 +6,19 @@ AML=/data/adb/modules/aml
 exec 2>$MODPATH/debug.log
 set -x
 
+# restart
+if [ "$API" -ge 24 ]; then
+  PID=`pidof audioserver`
+  if [ "$PID" ]; then
+    killall audioserver
+  fi
+else
+  PID=`pidof mediaserver`
+  if [ "$PID" ]; then
+    killall mediaserver
+  fi
+fi
+
 # wait
 sleep 20
 
@@ -59,17 +72,6 @@ if [ ! -d $MY_PRODUCT ] && [ -d /my_product/etc ]\
   done
 fi
 
-# restart
-if [ "$API" -ge 24 ]; then
-  PID=`pidof audioserver`
-  if [ "$PID" ]; then
-    killall audioserver
-  fi
-else
-  PID=`pidof mediaserver`
-  if [ "$PID" ]; then
-    killall mediaserver
-  fi
-fi
+
 
 
