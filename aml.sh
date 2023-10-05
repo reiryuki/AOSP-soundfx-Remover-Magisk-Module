@@ -1,4 +1,4 @@
-[ -z $MODPATH ] && MODPATH=${0%/*}
+[ ! "$MODPATH" ] && MODPATH=${0%/*}
 
 # destination
 MODAEC=`find $MODPATH -type f -name *audio*effects*.conf`
@@ -13,6 +13,10 @@ sed -i 's|path /vendor/lib/soundfx/removed||g' $MODAEC
 sed -i 's|path /system/lib/soundfx/removed||g' $MODAEC
 sed -i 's|path /vendor/lib/removed||g' $MODAEC
 sed -i 's|path /system/lib/removed||g' $MODAEC
+sed -i 's|path /vendor/lib64/soundfx/removed||g' $MODAEC
+sed -i 's|path /system/lib64/soundfx/removed||g' $MODAEC
+sed -i 's|path /vendor/lib64/removed||g' $MODAEC
+sed -i 's|path /system/lib64/removed||g' $MODAEC
 sed -i 's|library removed||g' $MODAEC
 sed -i 's|uuid removed||g' $MODAEC
 sed -i "/^        removed {/ {;N s/        removed {\n        }//}" $MODAEC

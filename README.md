@@ -1,10 +1,10 @@
 # AOSP soundfx Remover Magisk Module
 
 ## Descriptions
-- Removes stock AOSP system soundfx (except proxy, visualizer, downmix, dynamics_processing, and audio_pre_processing)
+- Removes stock AOSP system soundfx systemlessly (except proxy, visualizer, downmix, dynamics_processing, and audio_pre_processing)
 - Makes your audio mod sounds clearer
-- Removes stock MusicFX AOSP and AudioFX LineageOS app
-- Will not be able to use most of EQ from Play Store that is using AOSP system soundfx
+- Removes stock MusicFX AOSP and AudioFX LineageOS app systemlessly
+- You will not be able to use most of EQ from Play Store that is using AOSP system soundfx
 - AOSP soundfx is exist in every ROMs and vendors, not only in AOSP based ROM
 
 ## Screenshots
@@ -45,7 +45,7 @@
 - You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
 
 ## Thanks for Donations
-- This Magisk Module is always will be free but you can however show us that you are care by making a donations:
+This Magisk Module is always will be free but you can however show us that you are care by making a donations:
 - https://ko-fi.com/reiryuki
 - https://www.paypal.me/reiryuki
 - https://t.me/androidryukimodsdiscussions/2619
