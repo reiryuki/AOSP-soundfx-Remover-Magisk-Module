@@ -132,7 +132,8 @@ fi
 }
 mount_partitions_to_mirror() {
 unmount_mirror
-if [ "$SYSTEM_ROOT" == true ]; then
+if [ "$SYSTEM_ROOT" == true ]\
+|| [ "$SYSTEM_AS_ROOT" == true ]; then
   DIR=/system_root
   ui_print "- Mount $MIRROR$DIR..."
   mkdir -p $MIRROR$DIR
@@ -160,16 +161,16 @@ mount_odm_to_mirror
 mount_my_product_to_mirror
 }
 magisk_setup() {
-MAGISKPATH=`magisk --path`
+MAGISKTMP=`magisk --path`
 if [ "$BOOTMODE" == true ]; then
-  if [ "$MAGISKPATH" ]; then
-    mount -o rw,remount $MAGISKPATH
-    MAGISKTMP=$MAGISKPATH/.magisk
-    MIRROR=$MAGISKTMP/mirror
-  else
-    MAGISKTMP=/mnt
+  if [ "$MAGISKTMP" ]; then
     mount -o rw,remount $MAGISKTMP
-    MIRROR=$MAGISKTMP/mirror
+    INTERNALDIR=$MAGISKTMP/.magisk
+    MIRROR=$INTERNALDIR/mirror
+  else
+    INTERNALDIR=/mnt
+    mount -o rw,remount $INTERNALDIR
+    MIRROR=$INTERNALDIR/mirror
     mount_partitions_to_mirror
   fi
 fi
