@@ -112,12 +112,10 @@ RMVS='libqcompostprocbundle.so
       #libdynproc.so
       #e0e6539b-1781-7261-676f-6d7573696340
 
-# patch audio effects conf
+# patch audio effects
 if [ "$MODAEC" ]; then
   remove_conf
 fi
-
-# patch audio effects xml
 if [ "$MODAEX" ]; then
   remove_xml
 fi

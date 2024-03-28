@@ -3,6 +3,7 @@
 ## Descriptions
 - Removes stock AOSP system soundfx systemlessly (except proxy, visualizer, downmix, dynamics_processing, and audio_pre_processing)
 - Makes your audio mod sounds clearer
+- Removes Google Spatial Audio soundfx systemlessly
 - Removes stock MusicFX AOSP and AudioFX LineageOS app systemlessly
 - You will not be able to use most of EQ from Play Store that is using AOSP system soundfx
 - AOSP soundfx is exist in every ROMs and vendors, not only in AOSP based ROM
@@ -38,16 +39,14 @@
 - Android 12 AncientOS ROM
 - Android 12.1 Nusantara ROM
 - Android 13 Nusantara ROM, CrDroid ROM, & AlphaDroid ROM
+- Android 14 LineageOS
 
-## Credits and contributors
+## Credits and Contributors
 - https://t.me/viperatmos
 - https://t.me/androidryukimodsdiscussions
 - You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
 
-## Thanks for Donations
-This Magisk Module is always will be free but you can however show us that you are care by making a donations:
-- https://ko-fi.com/reiryuki
-- https://www.paypal.me/reiryuki
+## Sponsors
 - https://t.me/androidryukimodsdiscussions/2619
 
 
