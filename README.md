@@ -1,4 +1,4 @@
-# AOSP Sound Effect Remover Magisk Module
+# AOSP Sound Effects Remover Magisk Module
 
 ## Descriptions
 - Removes stock AOSP system sound effects systemlessly (except proxy, visualizer, downmix, dynamics_processing, and audio_pre_processing)
