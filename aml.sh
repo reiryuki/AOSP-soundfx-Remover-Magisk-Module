@@ -1,8 +1,8 @@
 [ ! "$MODPATH" ] && MODPATH=${0%/*}
 
 # destination
-MODAEC=`find $MODPATH -type f -name *audio*effects*.conf`
-MODAEX=`find $MODPATH -type f -name *audio*effects*.xml`
+MODAECS=`find $MODPATH -type f -name *audio*effects*.conf`
+MODAEXS=`find $MODPATH -type f -name *audio*effects*.xml`
 
 # function
 remove_conf() {
@@ -113,12 +113,12 @@ RMVS='libqcompostprocbundle.so
       #e0e6539b-1781-7261-676f-6d7573696340
 
 # patch audio effects
-if [ "$MODAEC" ]; then
+for MODAEC in $MODAECS; do
   remove_conf
-fi
-if [ "$MODAEX" ]; then
+done
+for MODAEX in $MODAEXS; do
   remove_xml
-fi
+done
 
 
 
