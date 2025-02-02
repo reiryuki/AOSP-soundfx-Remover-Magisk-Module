@@ -64,7 +64,7 @@ if [ -d $AML ] && [ ! -f $AML/disable ]\
 fi
 
 # audio flinger
-DMAF=`dumpsys media.audio_flinger`
+#DMAF=`dumpsys media.audio_flinger`
 
 
 
