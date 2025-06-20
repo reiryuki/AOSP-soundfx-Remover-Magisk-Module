@@ -46,7 +46,6 @@ if [ "$KSU" == true ]; then
   ui_print " KSUVersion=$KSU_VER"
   ui_print " KSUVersionCode=$KSU_VER_CODE"
   ui_print " KSUKernelVersionCode=$KSU_KERNEL_VER_CODE"
-  sed -i 's|#k||g' $MODPATH/post-fs-data.sh
 else
   ui_print " MagiskVersion=$MAGISK_VER"
   ui_print " MagiskVersionCode=$MAGISK_VER_CODE"
