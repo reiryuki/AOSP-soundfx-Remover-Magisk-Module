@@ -22,6 +22,7 @@ sed -i 's|uuid removed||g' $MODAEC
 sed -i "/^        removed {/ {;N s/        removed {\n        }//}" $MODAEC
 sed -i 's|removed { }||g' $MODAEC
 sed -i 's|removed {}||g' $MODAEC
+sed -i '/^[[:space:]]*$/d' $MODAEC
 }
 remove_xml() {
 for RMV in $RMVS; do
@@ -41,6 +42,7 @@ sed -i 's|<effect name="removed" uuid="removed" library="removed" />||g' $MODAEX
 sed -i 's|<libsw library="removed" uuid="removed" />||g' $MODAEX
 sed -i 's|<libhw library="removed" uuid="removed" />||g' $MODAEX
 sed -i 's|<apply effect="removed" />||g' $MODAEX
+sed -i '/^[[:space:]]*$/d' $MODAEX
 }
 
 # store
