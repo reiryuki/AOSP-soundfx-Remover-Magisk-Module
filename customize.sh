@@ -129,6 +129,7 @@ APPS="AudioFX MusicFX"
 hide_app
 
 # run
+MODSYSTEM=/system
 . $MODPATH/copy.sh
 . $MODPATH/.aml.sh
 

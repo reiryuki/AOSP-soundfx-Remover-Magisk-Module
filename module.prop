@@ -1,7 +1,7 @@
 id=AOSPsoundfxRemover
 name=AOSP Sound Effects Remover
-version=v2.16
-versionCode=26
+version=v2.17
+versionCode=27
 author=Rei Ryuki the Fixer
 description=Removes stock AOSP system sound effects (except proxy, visualizer, downmix, dynamics_processing, and audio_pre_processing). Makes your audio mod sounds clearer. Helps audio mods working properly. Removes Google Spatial Audio sound effect. Removes stock MusicFX AOSP and AudioFX LineageOS app. You will not be able to use most of equalizers from Play Store.
 
