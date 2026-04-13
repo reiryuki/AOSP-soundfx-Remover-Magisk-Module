@@ -61,10 +61,7 @@ v2.8
 - Install this module via Magisk app or Kitsune Mask app or KernelSU app or Apatch app or Recovery if Magisk or Kitsune Mask installed
 - This is also an audio mod so, you need to install AML Magisk Module https://t.me/ryukinotes/34 if using any other else audio mod module
 - Reboot
-- You can check are your AOSP sound effects removed or not via Terminal Emulator:
-
-  `su -c dumpsys media.audio_flinger`
-
+- You can use https://github.com/reiryuki/Z-Folder-Script and check loaded_soundfx.txt created are your AOSP sound effects removed or not.
 
 ## Optionals
 - Global: https://t.me/ryukinotes/35
