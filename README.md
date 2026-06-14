@@ -9,9 +9,13 @@
 - AOSP sound effects are exist in every ROMs and vendors, not only in AOSP based ROM
 
 ## Screenshots
-- https://t.me/androidryukimodsdiscussions/92
+https://t.me/androidryukimodsdiscussions/92
 
 ## Changelog
+
+v2.18
+- Support NoMount metamodule
+- Move _uninstall.log to /data/adb/logs/
 
 v2.17
 - Fix wrong target in latest KernelSU
@@ -49,25 +53,20 @@ v2.9
 - Fix mount required partitions while installing via Recovery
 - Save uninstall log in /data/adb/modules/..._uninstall.log
 
-v2.8
-- Creates /sdcard/optionals.prop file if doesn't exist
-- Using magiskpolicy --live --apply sepolicy.pfsd if sepolicy.sh=1
-- Moved audioserver restart to the beginning of service.sh
-
 ## Requirements
-- Magisk or Kitsune Mask or KernelSU or Apatch installed
+Magisk or Kitsune Mask or KernelSU or Apatch installed
 
 ## Installation Guide & Download Link
-- Install this module https://devuploads.com/exty211ojyum via Magisk app or Kitsune Mask app or KernelSU app or Apatch app or Recovery if Magisk or Kitsune Mask installed
+- Install this module via Magisk app or Kitsune Mask app or KernelSU app or Apatch app or Recovery if Magisk or Kitsune Mask installed
 - This is also an audio mod so, you need to install AML Magisk Module https://t.me/ryukinotes/34 if using any other else audio mod module
 - Reboot
 - You can use https://github.com/reiryuki/Z-Folder-Script and check loaded_soundfx.txt created are your AOSP sound effects removed or not.
 
 ## Optionals
-- Global: https://t.me/ryukinotes/35
+Global: https://t.me/ryukinotes/35
 
 ## Troubleshootings
-- Global: https://t.me/ryukinotes/34
+Global: https://t.me/ryukinotes/34
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
@@ -80,6 +79,6 @@ v2.8
 - You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
 
 ## Sponsors
-- https://t.me/ryukinotes/25
+https://t.me/ryukinotes/25
 
 
